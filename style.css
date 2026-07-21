@@ -1,0 +1,140 @@
+body {
+    background-color: green;
+    margin: 0;
+    padding: 30px; /* Da un aire general a los bordes de la pantalla */
+    box-sizing: border-box;
+    font-family: Calibri, sans-serif;
+}
+
+.title {
+    color: aliceblue;
+    margin-top: 0;
+    margin-bottom: 25px; /* Controla la distancia con lo de abajo */
+    font-size: 32px;
+}
+
+/* --- Estructura Principal --- */
+.principal {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start; /* Todo alineado desde el borde izquierdo */
+    gap: 30px; /* Distancia entre el panel blanco y las cajas de la derecha */
+}
+
+/* --- Panel Izquierdo Blanco --- */
+.panel {
+    width: 320px;
+    height: 500px;
+    background-color: greenyellow;
+    border: 3px solid #1a1a1a; /* Borde un poco más grueso y oscuro */
+    border-radius: 15px; /* Curvas más suaves */
+    padding: 20px 15px;
+    box-sizing: border-box;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Juntamos los items un poco más para que parezcan tarjetas */
+    
+    overflow-y: auto;
+    flex-shrink: 0;
+    margin-top: 15px; 
+    
+    /* Sombra sólida para un estilo "Neo-brutalista" muy juvenil y moderno */
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.8); 
+}
+.panel::-webkit-scrollbar {
+    width: 8px;
+}
+.panel::-webkit-scrollbar-track {
+    background: transparent;
+}
+.panel::-webkit-scrollbar-thumb {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+}
+
+/* --- Cada partido dentro del panel (Estilo Tarjeta Juvenil) --- */
+.panel a {
+    margin: 0;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1a1a1a;
+    font-weight: 800; /* Letra gruesa */
+    text-align: center;
+    text-transform: uppercase; /* Letras en mayúscula */
+    letter-spacing: 0.5px;
+    
+    /* Forma de mini-tarjeta */
+    background-color: rgba(255, 255, 255, 0.5); /* Blanco semitransparente */
+    padding: 15px 10px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: all 0.2s ease-in-out; /* Animación fluida */
+    cursor: pointer; /* Cursor de manito al pasar por encima */
+}
+
+/* --- Efecto dinámico al pasar el mouse (Hover) --- */
+.panel a:hover {
+    background-color: white; /* Se vuelve blanco sólido */
+    border: 2px solid #1a1a1a; /* Aparece un borde negro oscuro */
+    transform: translateY(-4px) scale(1.02); /* Se levanta un poco */
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.8); /* Sombra 3D */
+    color: #000;
+}
+
+/* --- Sección de Partidos (Alineada al panel) --- */
+.partidos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+    /* Para que las tarjetas verdes también bajen a la misma altura del panel */
+    margin-top: 15px; 
+}
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* --- Cajas de los Equipos --- */
+.caja {
+    width: 260px;
+    height: 90px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 22px;
+    font-weight: normal;
+    text-align: center;
+
+    background-color: greenyellow;
+    position: relative; /* Indispensable para posicionar la pelota relativa a la caja */
+}
+
+.pelota {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 25px;
+    height: 25px;
+    transform: rotate(-70deg);
+}
+
+.vs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px; /* Ancho fijo para que no desalinee los bloques */
+    height: 90px;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+}
